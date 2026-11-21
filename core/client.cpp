@@ -35,7 +35,7 @@ void Client::DrawHUD() {
 	// get tickrate.
 	int rate = (int)std::round(1.f / g_csgo.m_globals->m_interval);
 
-	std::string text = tfm::format(XOR("supremacy | rtt: %ims | rate: %i | %s"), ms, rate, time.str().data());
+	std::string text = tfm::format(XOR("chat.gpt | rtt: %ims | rate: %i | %s"), ms, rate, time.str().data());
 	render::FontSize_t size = render::hud.size(text);
 
 	// background.
@@ -491,7 +491,7 @@ void Client::print(const std::string text, ...) {
 	va_end(list);
 
 	// print to console.
-	g_csgo.m_cvar->ConsoleColorPrintf(colors::burgundy, XOR("[supremacy] "));
+	g_csgo.m_cvar->ConsoleColorPrintf(colors::burgundy, XOR("[chat.gpt] "));
 	g_csgo.m_cvar->ConsoleColorPrintf(colors::white, buf.c_str());
 }
 
@@ -612,6 +612,6 @@ void Client::SetClantag()
 	if (!clantag)
 		clantag = pattern::find(g_csgo.m_engine_dll, XOR("53 56 57 8B DA 8B F9 FF 15")).as< int(__fastcall*)(const char*, const char*) >();
 
-	clantag("supremacy", "supremacy");
+	clantag("chat.gpt", "chat.gpt");
 }
 
