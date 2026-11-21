@@ -42,7 +42,7 @@ The project has been organized into modular subsystems:
 Run from a Developer Command Prompt or PowerShell:
 
 ```bash
-msbuild supremacy_csgo.sln -p:Configuration=Release -p:Platform=x86
+msbuild chat.gpt.sln -p:Configuration=Release -p:Platform=x86
 ```
 
 The compiled binary will be placed at:
